@@ -63,6 +63,9 @@ header {
   margin: 20px;
   text-align: center;
   margin-top: 40px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column-reverse;
 }
 
 #cartas {
@@ -77,4 +80,34 @@ header {
   position: relative;
   transform-style: preserve-3d;
   transition: transform .3s linear;
+}
+
+.nombre-persona {
+  color: #FCB48E;
+  width: 197px;
+  height: 40px;
+  left: 1064px;
+  top: 374px;
+  font-family: Salsa;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 23px;
+  line-height: 89.8%;
+  text-align: center;
+  letter-spacing: 0.04em;
+
+}
+
+.foto-persona {
+  width: 104px;
+  height: 167px;
+  left: 75px;
+  top: 199px;
+  border-radius: 10px;
+}
+
+img {
+  margin-right: 46px;
+  margin-bottom: 13px;
+}
 }
