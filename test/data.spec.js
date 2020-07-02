@@ -1,23 +1,26 @@
-import { example, anotherExample } from '../src/data.js';
+import {
+  agregarRol,
+  filterHouse,
+} from '../src/data.js';
 
 
-describe('example', () => {
+describe('agregarRol', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof agregarRol).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns `agregarRol`', () => {
+    expect(agregarRol()).toBe('agregarRol');
   });
 });
 
 
-describe('anotherExample', () => {
+describe('filterHouse', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof filterHouse).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('returns `filterHouse`', () => {
+    expect(filterHouse()).toBe('filterHouse');
   });
 });

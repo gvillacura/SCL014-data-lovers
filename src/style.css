@@ -1,5 +1,5 @@
 body {
-  background-image: url('/src/Media/vector-harry-potter-magic-pattern.jpg');
+  background-image: url('Media/vector-harry-potter-magic-pattern.jpg');
   display: flex;
 }
 
@@ -7,7 +7,7 @@ header {
   background: #4E0074;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: absolute;
-  width: 1366px;
+  width: 100%;
   height: 75px;
   left: 0px;
   top: 0px;
@@ -42,11 +42,8 @@ header {
   font-weight: normal;
   font-size: 24px;
   line-height: 125.8%;
-  /* or 30px */
-
   text-align: center;
   letter-spacing: 0.04em;
-
   color: #FFC700;
 }
 
@@ -54,18 +51,31 @@ header {
   margin-right: 10px;
 }
 
-.information {
+.card-front {
   width: 195px;
   height: 253px;
-  top: calc(50% - 253px/2 - 90.5px);
   background: rgba(0, 0, 0, 0.92);
   border-radius: 7px;
-  margin: 20px;
   text-align: center;
   margin-top: 40px;
   display: flex;
   align-items: flex-end;
   flex-direction: column-reverse;
+  backface-visibility: hidden;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .3s cubic-bezier(0.4, 0, 1, 1);
+  transform: rotateY(0deg);
+  cursor: pointer;
+  width: 195px;
+  margin: 20px;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
 }
 
 #cartas {
@@ -73,41 +83,69 @@ header {
   display: flex;
   flex-wrap: wrap;
   margin-top: 124px;
-
-}
-
-.car {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform .3s linear;
 }
 
 .nombre-persona {
   color: #FCB48E;
-  width: 197px;
-  height: 40px;
-  left: 1064px;
-  top: 374px;
+  width: 186px;
+  height: 36px;
   font-family: Salsa;
   font-style: normal;
   font-weight: 100;
   font-size: 23px;
-  line-height: 89.8%;
+  line-height: 90.8%;
   text-align: center;
   letter-spacing: 0.04em;
+  padding-bottom: 10px;
 
 }
 
 .foto-persona {
-  width: 104px;
-  height: 167px;
-  left: 75px;
-  top: 199px;
+  width: 124px;
+  height: 171px;
   border-radius: 10px;
 }
 
 img {
-  margin-right: 46px;
-  margin-bottom: 13px;
+  margin-right: 36px;
+  margin-bottom: 18px;
 }
+
+.card-back {
+  position: absolute;
+  top: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  width: 195px;
+  height: 253px;
+  background: rgba(0, 0, 0, 0.92);
+  border-radius: 7px;
+  text-align: center;
+  display: flex;
+  align-items: flex-star;
+  flex-direction: column;
+}
+
+.card-back>div {
+  color: #FCB48E;
+  width: 180px;
+  height: 38px;
+  font-family: Salsa;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 106.8%;
+  text-align: start;
+  letter-spacing: 0.04em;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.house-persona {
+  padding-top: 28px;
+}
+
+#filtros {
+  color: white;
+  margin-top: 111px;
 }
