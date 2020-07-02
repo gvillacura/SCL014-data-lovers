@@ -1,9 +1,4 @@
-import {
-  example
-} from './data.js';
 import data from './data/potter/potter.js';
-
-console.log(data);
 
 const container = document.querySelector('#cartas');
 
