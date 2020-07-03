@@ -4,9 +4,9 @@ import {
 } from './data.js';
 import data from './data/potter/potter.js';
 
-const house = document.getElementById('house');
+const house = document.querySelector('#house');
+const role = document.querySelector('#role');
 
-// console.log(data);
 const container = document.querySelector('#cartas');
 
 function showData(characterData) {
@@ -34,29 +34,34 @@ function showData(characterData) {
     // Agregamos un div para la casa del personaje, le otorgamos una clase y obtenemos la data
     const houseElement = document.createElement('div');
     houseElement.classList.add('house-persona');
-    houseElement.innerHTML = `House: ${persona.house}`;
+    houseElement.innerHTML = `
+    <span> House:</span> ${persona.house}`;
 
     // Agregamos un div para el género del personaje, le otorgamos una clase y obtenemos la data
     const genderElement = document.createElement('div');
     genderElement.classList.add('gender-persona');
-    genderElement.innerHTML = `Gender: ${persona.gender}`;
+    genderElement.innerHTML = `
+    <span> Gender:</span> ${persona.gender}`;
 
     // Agregamos div para la fecha de nacimiento del personaje, otorgamos una clase y obtenemos data
     const birthElement = document.createElement('div');
     birthElement.classList.add('date-pf-birth');
-    birthElement.innerHTML = `Date of birth: ${persona.dateOfBirth}`;
+    birthElement.innerHTML = `
+    <span> Date of birth:</span>${persona.dateOfBirth}`;
 
     // Agregamos div para la ascendencia del personaje, le otorgamos una clase y obtenemos la data.
 
     const ancestryElement = document.createElement('div');
     ancestryElement.classList.add('ancestry-persona');
-    ancestryElement.innerHTML = `Ancestry: ${persona.ancestry}`;
+    ancestryElement.innerHTML = `
+    <span> Ancestry:</span> ${persona.ancestry}`;
 
     // Agregamos un div para el rol del personaje, le otorgamos una clase y obtenemos la data.
     const rolePersona = agregarRol(persona);
     const roleElement = document.createElement('div');
     roleElement.classList.add('role-persona');
-    roleElement.innerHTML = `Role: ${rolePersona}`;
+    roleElement.innerHTML = `
+    <span> Role:</span> ${rolePersona}`;
 
     // Agregamos el div principal de tarjeta a "container".
     container.append(personaElement);
@@ -83,5 +88,11 @@ function selectHouse() {
   showData(houseElement);
 }
 
+function selectRole() {
+  const roleFilter = role.value;
+
+}
+
 house.addEventListener('change', selectHouse);
 showData(data);
+role.addEventListener('change', selectRole);
