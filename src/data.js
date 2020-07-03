@@ -23,6 +23,14 @@ export const filterHouse = (house) => {
   return personajesHome;
 };
 
+export const filterGender = (gender) => {
+  if (gender === '') {
+    return data;
+  }
+  const personajesHome = data.filter(persona => persona.gender === gender);
+  return personajesHome;
+};
+
 // export const example = () => 'example';
 
 // export const anotherExample = () => 'OMG';
