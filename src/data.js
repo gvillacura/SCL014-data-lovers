@@ -23,6 +23,16 @@ export const filterHouse = (house) => {
   return personajesHome;
 };
 
+export const filterRole = (role) => {
+  if (role === '') {
+    return data;
+  }
+  const personajeHome = data.filter((persona) => {
+    const characterRol = agregarRol(persona);
+    return characterRol === role;
+  });
+  return personajeHome;
+};
 // export const example = () => 'example';
 
 // export const anotherExample = () => 'OMG';

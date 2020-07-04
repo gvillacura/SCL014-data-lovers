@@ -10,13 +10,10 @@ body {
 }
 
 header {
-  background: #404643;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 100;
   position: absolute;
   width: 100%;
-  height: 75px;
   left: 0px;
-  top: 0px;
 }
 
 header link {
@@ -40,7 +37,6 @@ header link {
   top: 25px;
   display: flex;
   justify-content: space-around;
-  font-family: Salsa;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -134,7 +130,6 @@ img {
 .card-back>div {
   color: #FCB48E;
   height: 38px;
-  font-family: Salsa;
   font-style: normal;
   font-size: 18px;
   line-height: 106.8%;
@@ -159,12 +154,18 @@ span {
   margin: 0;
 }
 
+ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 ul.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-
   background-color: #333;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 ul.topnav li {
@@ -177,6 +178,8 @@ ul.topnav li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-size: 25px;
+  margin-top: 0.5em;
 }
 
 ul.topnav li a:hover:not(.active) {

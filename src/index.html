@@ -10,10 +10,8 @@
 <body>
 
   <header>
-    <div><img id="logo" src="Media/harry-potter-logo-png-transparent.png" alt=""></div>
-
     <ul class="topnav">
-
+      <div><img id="logo" src="Media/harry-potter-logo-png-transparent.png" alt=""></div>
       <li>
         <img class="link" src="Media/1815971.png" alt="">
       </li>
@@ -27,17 +25,18 @@
 
 
   <div id="filtros">
-    <select id="house">
+    <select id="house" class='filter'>
       <option value="">House</option>
       <option value="Gryffindor"> Gryffindor</option>
       <option value="Slytherin"> Slytherin</option>
       <option value="Ravenclaw"> Ravenclaw</option>
       <option value="Hufflepuff"> Hufflepuff</option>
     </select>
-    <select id="role">
+    <select id="role" class='filter'>
       <option value="">Role</option>
       <option value="Student"> Student</option>
       <option value="Staff"> Staff</option>
+      <option value="No role"> No role</option>
     </select>
   </div>
   <div id="root"></div>

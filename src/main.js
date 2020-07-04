@@ -1,6 +1,7 @@
 import {
   agregarRol,
   filterHouse,
+  filterRole,
 } from './data.js';
 import data from './data/potter/potter.js';
 
@@ -82,6 +83,7 @@ function showData(characterData) {
 }
 
 function selectHouse() {
+  document.querySelector('#role').value = '';
   const houseFilter = house.value;
   const houseElement = filterHouse(houseFilter);
   container.innerHTML = '';
@@ -89,8 +91,11 @@ function selectHouse() {
 }
 
 function selectRole() {
+  document.querySelector('#house').value = '';
   const roleFilter = role.value;
-
+  const roleElement = filterRole(roleFilter);
+  container.innerHTML = '';
+  showData(roleElement);
 }
 
 house.addEventListener('change', selectHouse);
