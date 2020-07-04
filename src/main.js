@@ -2,11 +2,13 @@ import {
   agregarRol,
   filterHouse,
   filterRole,
+  filterGender,
 } from './data.js';
 import data from './data/potter/potter.js';
 
 const house = document.querySelector('#house');
 const role = document.querySelector('#role');
+const gender = document.querySelector('#gender');
 
 const container = document.querySelector('#cartas');
 
@@ -98,6 +100,14 @@ function selectRole() {
   showData(roleElement);
 }
 
+function selectGender() {
+  const genderFilter = gender.value;
+  const genderElement = filterGender(genderFilter);
+  container.innerHTML = '';
+  showData(genderElement);
+}
+
 house.addEventListener('change', selectHouse);
 showData(data);
 role.addEventListener('change', selectRole);
+gender.addEventListener('change', selectGender);
