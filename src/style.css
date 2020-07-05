@@ -144,11 +144,6 @@ img {
   padding-top: 28px;
 }
 
-#filtros {
-  color: white;
-  margin-top: 111px;
-}
-
 span {
   color: #ffc7009c;
   margin: 0;
@@ -198,4 +193,41 @@ ul.topnav li a:hover:not(.active) {
   width: 100px;
   top: 3px;
   float: right;
+}
+
+#filtros select {
+  appearance: none;
+  background-color: transparent;
+  color: #ffc700d1;
+  padding: 12px;
+  width: 147px;
+  border: none;
+  font-size: 22px;
+  font-family: open sans-serif;
+  cursor: pointer;
+}
+
+#filtros select:focus {
+  outline: none;
+}
+
+#filtros {
+  margin-top: 99px;
+  position: absolute;
+  left: 35%;
+  cursor: pointer;
+}
+
+#filtros select:hover {
+  color: #FFEB3B;
+}
+
+option {
+  background-color: #0e141e;
+  color: #d4a712;
+}
+
+option:hover {
+  background-color: none;
+  color: #FFEB3B;
 }

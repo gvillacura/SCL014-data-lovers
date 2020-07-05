@@ -86,6 +86,7 @@ function showData(characterData) {
 
 function selectHouse() {
   document.querySelector('#role').value = '';
+  document.querySelector('#gender').value = '';
   const houseFilter = house.value;
   const houseElement = filterHouse(houseFilter);
   container.innerHTML = '';
@@ -94,6 +95,7 @@ function selectHouse() {
 
 function selectRole() {
   document.querySelector('#house').value = '';
+  document.querySelector('#gender').value = '';
   const roleFilter = role.value;
   const roleElement = filterRole(roleFilter);
   container.innerHTML = '';
@@ -101,6 +103,8 @@ function selectRole() {
 }
 
 function selectGender() {
+  document.querySelector('#house').value = '';
+  document.querySelector('#role').value = '';
   const genderFilter = gender.value;
   const genderElement = filterGender(genderFilter);
   container.innerHTML = '';
