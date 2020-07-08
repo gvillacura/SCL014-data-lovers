@@ -4,6 +4,16 @@
 
 }
 
+img {
+  max-width: 100%;
+}
+
+.link-conteiner {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-image: url('Media/fondo_negro2.png');
   display: flex;
@@ -16,17 +26,22 @@ header {
   left: 0px;
 }
 
+#pagina_inicial {
+  width: 100%;
+}
+
 header link {
   display: flex;
   justify-content: flex-end;
 }
+
 
 #logo {
   position: absolute;
   width: 179px;
   height: 179px;
   left: 17px;
-  top: -52px;
+  top: -45px;
 }
 
 #menu {
@@ -51,6 +66,7 @@ header link {
   margin-right: 10px;
 }
 
+/* Estilo de cartas en página inicial, parte delantera y trasera*/
 .card-front {
   width: 195px;
   height: 253px;
@@ -79,7 +95,7 @@ header link {
   transform: rotateY(180deg);
 }
 
-#cartas {
+.formato_cartas {
   justify-content: space-evenly;
   display: flex;
   flex-wrap: wrap;
@@ -144,6 +160,78 @@ img {
   padding-top: 28px;
 }
 
+.type-wand .nombre-persona {
+  color: #ffc7009c;
+  width: 221px;
+  height: 36px;
+  font-family: 'Salsa';
+  font-style: normal;
+  font-size: 19px;
+  line-height: 98.8%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  padding-bottom: 0px;
+  margin-bottom: -4px;
+  text-decoration: underline;
+}
+
+.type-wand>div {
+  color: #FCB48E;
+  height: 18px;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 106.8%;
+  text-align: start;
+  letter-spacing: 0.04em;
+  padding-left: 10px;
+  margin-bottom: 13px;
+  font-family: open sans-serif;
+}
+
+.core-wand {
+  width: 248px;
+  min-height: 110vh;
+  background: rgb(21, 32, 39);
+  border: #ffc7009c solid;
+  border-radius: 7px;
+  display: flex;
+  position: relative;
+  margin: 20px;
+  align-items: flex-star;
+  flex-direction: column;
+}
+
+.img-wands {
+
+  height: 134px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.core-title {
+  color: #ffc7009c;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.core-title h2 {
+  text-align: center;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.image-core {
+  width: 134px;
+  margin: 0;
+}
+
+.dragon-image {
+  padding-right: 41px;
+}
+
+/*Estilos para header*/
 span {
   color: #ffc7009c;
   margin: 0;
@@ -191,7 +279,8 @@ ul.topnav li a:hover:not(.active) {
 
 .link {
   width: 100px;
-  top: 3px;
+  padding: 10px;
+  margin: 0;
   float: right;
 }
 

@@ -11,44 +11,51 @@
 
   <header>
     <ul class="topnav">
-      <div><img id="logo" src="Media/harry-potter-logo-png-transparent.png" alt=""></div>
-      <li>
-        <img class="link" src="Media/1815971.png" alt="">
-      </li>
-      <li><a href="#wand">Wand</a></li>
+      <div><img class="go-home" id="logo" src="Media/harry-potter-logo-png-transparent.png" alt=""></div>
+      <a class="link-conteiner" href="https://www.harrypotterwizardsunite.com/es/"> <img class="link"
+          src="Media/1815971.png" alt="" /></a>
+      <li><a id="wand">Wand</a></li>
       <li><a href="#patronus">Patronus</a></li>
-      <li><a href="#home">Home</a></li>
-
+      <li><a class="home">Home</a></li>
     </ul>
 
   </header>
+  <style type="text/css">
+    * {
+      cursor: url(https://cur.cursors-4u.net/user/use-1/use160.cur), auto !important;
+    }
 
+  </style>
+  <a href="http://www.cursors-4u.com/cursor/2011/02/06/harry-potter-magical-wand.html" target="_blank"
+    title="Harry Potter Magical Wand"><img src="http://cur.cursors-4u.net/cursor.png" border="0"
+      alt="Harry Potter Magical Wand" style="position:absolute; top: 0px; right: 0px;" /></a>
 
-  <div id="filtros">
-    <select id="house">
-      <option value="">House</option>
-      <option value="Gryffindor"> Gryffindor</option>
-      <option value="Slytherin"> Slytherin</option>
-      <option value="Ravenclaw"> Ravenclaw</option>
-      <option value="Hufflepuff"> Hufflepuff</option>
-    </select>
-    <select id="role">
-      <option value="">Role</option>
-      <option value="Student"> Student</option>
-      <option value="Staff"> Staff</option>
-      <option value="No role"> No role</option>
-    </select>
-    <select id="gender">
-      <option value="">Gender</option>
-      <option value="female"> Female</option>
-      <option value="male"> Male</option>
-    </select>
+  <div id="pagina_inicial">
+    <div id="filtros">
+      <select id="house">
+        <option value="">House</option>
+        <option value="Gryffindor"> Gryffindor</option>
+        <option value="Slytherin"> Slytherin</option>
+        <option value="Ravenclaw"> Ravenclaw</option>
+        <option value="Hufflepuff"> Hufflepuff</option>
+      </select>
+      <select id="role">
+        <option value="">Role</option>
+        <option value="Student"> Student</option>
+        <option value="Staff"> Staff</option>
+        <option value="No role"> No role</option>
+      </select>
+      <select id="gender">
+        <option value="">Gender</option>
+        <option value="female"> Female</option>
+        <option value="male"> Male</option>
+      </select>
+    </div>
+    <main>
+      <section id="cartas" class="formato_cartas ">
+      </section>
+    </main>
   </div>
-  <div id="root"></div>
-  <main>
-    <section id="cartas">
-    </section>
-  </main>
   <script src="main.js" type="module"></script>
 </body>
 

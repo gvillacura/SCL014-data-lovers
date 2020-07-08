@@ -5,12 +5,19 @@ import {
   filterGender,
 } from './data.js';
 import data from './data/potter/potter.js';
-
+// Variables utilizadas en filtro.
 const house = document.querySelector('#house');
 const role = document.querySelector('#role');
 const gender = document.querySelector('#gender');
-
+// Variables utilizadas para mostrar página inicial.
 const container = document.querySelector('#cartas');
+// Variables utilizadas para mostrar página de varitas.
+const pageWand = document.querySelector('#wand');
+// let containerWands;
+let unicornCore;
+let dragonCore;
+let phoenixCore;
+let unkownCore;
 
 function showData(characterData) {
   characterData.forEach((persona) => {
@@ -50,7 +57,7 @@ function showData(characterData) {
     const birthElement = document.createElement('div');
     birthElement.classList.add('date-pf-birth');
     birthElement.innerHTML = `
-    <span> Date of birth:</span>${persona.dateOfBirth}`;
+    <span> Date of birth: </span>${persona.dateOfBirth}`;
 
     // Agregamos div para la ascendencia del personaje, le otorgamos una clase y obtenemos la data.
 
@@ -83,7 +90,9 @@ function showData(characterData) {
     cardBack.append(roleElement);
   });
 }
+showData(data);
 
+// Filtro 'House'
 function selectHouse() {
   document.querySelector('#role').value = '';
   document.querySelector('#gender').value = '';
@@ -93,6 +102,7 @@ function selectHouse() {
   showData(houseElement);
 }
 
+// Filtro 'Role'
 function selectRole() {
   document.querySelector('#house').value = '';
   document.querySelector('#gender').value = '';
@@ -102,6 +112,7 @@ function selectRole() {
   showData(roleElement);
 }
 
+// Filtro 'Gender'
 function selectGender() {
   document.querySelector('#house').value = '';
   document.querySelector('#role').value = '';
@@ -112,6 +123,176 @@ function selectGender() {
 }
 
 house.addEventListener('change', selectHouse);
-showData(data);
 role.addEventListener('change', selectRole);
 gender.addEventListener('change', selectGender);
+
+// Función para armar y obtener data de la página de varitas.
+function showWands() {
+  data.forEach((persona) => {
+    if (persona.wand.wood === '' && persona.wand.length === '') {
+      return;
+    }
+    if (persona.wand.core === 'unicorn hair' || persona.wand.core === 'unicorn tail-hair') {
+      const personaElement = document.createElement('article');
+      personaElement.classList.add('type-wand');
+      unicornCore.append(personaElement);
+
+      // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
+      const personaNombreElement = document.createElement('div');
+      personaNombreElement.classList.add('nombre-persona');
+      personaNombreElement.innerHTML = `${persona.name}`;
+      personaElement.append(personaNombreElement);
+
+      // Agregamos un div para la madera de la varita, le otorgamos una clase y obtenemos la data
+      const woodElement = document.createElement('div');
+      woodElement.classList.add('wood_of_wand');
+      woodElement.innerHTML = `
+        <span> Wood: </span>${persona.wand.wood}`;
+      personaElement.append(woodElement);
+
+      // Agregamos un div para el largo de la varita, le otorgamos una clase y obtenemos la data
+      const lenghtElement = document.createElement('div');
+      lenghtElement.classList.add('core_of_wand');
+      lenghtElement.innerHTML = `
+        <span> Length: </span>${persona.wand.length}`;
+      personaElement.append(lenghtElement);
+    }
+
+    if (persona.wand.core === 'dragon heartstring') {
+      const personaElement = document.createElement('article');
+      personaElement.classList.add('type-wand');
+      dragonCore.append(personaElement);
+
+      // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
+      const personaNombreElement = document.createElement('div');
+      personaNombreElement.classList.add('nombre-persona');
+      personaNombreElement.innerHTML = `${persona.name}`;
+      personaElement.append(personaNombreElement);
+
+      // Agregamos un div para la madera de la varita, le otorgamos una clase y obtenemos la data
+      const woodElement = document.createElement('div');
+      woodElement.classList.add('wood_of_wand');
+      woodElement.innerHTML = `
+        <span> Wood: </span>${persona.wand.wood}`;
+      personaElement.append(woodElement);
+
+      // Agregamos un div para el largo de la varita, le otorgamos una clase y obtenemos la data
+      const lenghtElement = document.createElement('div');
+      lenghtElement.classList.add('core_of_wand');
+      lenghtElement.innerHTML = `
+        <span> Length: </span>${persona.wand.length}`;
+      personaElement.append(lenghtElement);
+    }
+
+    if (persona.wand.core === 'phoenix feather') {
+      const personaElement = document.createElement('article');
+      personaElement.classList.add('type-wand');
+      phoenixCore.append(personaElement);
+
+      // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
+      const personaNombreElement = document.createElement('div');
+      personaNombreElement.classList.add('nombre-persona');
+      personaNombreElement.innerHTML = `${persona.name}`;
+      personaElement.append(personaNombreElement);
+
+      // Agregamos un div para la madera de la varita, le otorgamos una clase y obtenemos la data
+      const woodElement = document.createElement('div');
+      woodElement.classList.add('wood_of_wand');
+      woodElement.innerHTML = `
+        <span> Wood: </span>${persona.wand.wood}`;
+      personaElement.append(woodElement);
+
+      // Agregamos un div para el largo de la varita, le otorgamos una clase y obtenemos la data
+      const lenghtElement = document.createElement('div');
+      lenghtElement.classList.add('core_of_wand');
+      lenghtElement.innerHTML = `
+        <span> Length: </span>${persona.wand.length}`;
+      personaElement.append(lenghtElement);
+    }
+
+    if (persona.wand.core === '' || persona.wand.core === 'thestral tail hair') {
+      if (persona.wand.core === '') {
+        // eslint-disable-next-line no-param-reassign
+        persona.wand.core = 'unknown';
+      }
+      const personaElement = document.createElement('article');
+      personaElement.classList.add('type-wand');
+      unkownCore.append(personaElement);
+
+      // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
+      const personaNombreElement = document.createElement('div');
+      personaNombreElement.classList.add('nombre-persona');
+      personaNombreElement.innerHTML = `${persona.name}`;
+      personaElement.append(personaNombreElement);
+
+      // Agregamos un div para la madera de la varita, le otorgamos una clase y obtenemos la data
+      const coreElement = document.createElement('div');
+      coreElement.classList.add('core_of_wand');
+      coreElement.innerHTML = `
+         <span> Core: </span>${persona.wand.core}`;
+      personaElement.append(coreElement);
+
+      // Agregamos un div para la madera de la varita, le otorgamos una clase y obtenemos la data
+      const woodElement = document.createElement('div');
+      woodElement.classList.add('wood_of_wand');
+      woodElement.innerHTML = `
+        <span> Wood: </span>${persona.wand.wood}`;
+      personaElement.append(woodElement);
+
+      // Agregamos un div para el largo de la varita, le otorgamos una clase y obtenemos la data
+      const lenghtElement = document.createElement('div');
+      lenghtElement.classList.add('core_of_wand');
+      lenghtElement.innerHTML = `
+        <span> Length: </span>${persona.wand.length}`;
+      personaElement.append(lenghtElement);
+    }
+  });
+}
+
+function wandPage() {
+  document.querySelector('#pagina_inicial').innerHTML = `
+    <main>
+      <section id="wand_information" class = "formato_cartas ">
+      <div class = "core-title">
+        <h2 >Unicorn tail-hair core</h2>
+        <div id = "unicorn_core" class = "core-wand">
+          <div class = "img-wands"><img class="image-core" src="Media/Unicornio.png" alt=""></div></div>
+      </div>
+      <div class = "core-title">
+        <h2 class = "core-title">Dragon heartstring core</h2>
+        <div id = "dragon_core" class = "core-wand">
+          <div class = "img-wands"><img class="image-core dragon-image" src="Media/dragon.png" alt=""></div>
+        </div>
+      </div>
+      <div class = "core-title">
+        <h2>Phoenix feather core</h2>
+        <div id = "phoenix_core" class = "core-wand">
+          <div class = "img-wands"><img class="image-core" src="Media/phoenix.png" alt=""></div>
+        </div>
+      </div>
+      <div class = "core-title">
+        <h2 ">Another core</h2>
+        <div id = "unknown_core" class = "core-wand">
+        <div class = "img-wands"><img class="image-core" src="Media/varita.png" alt=""></div>
+        </div>
+      </div>
+      </section>
+    </main>
+`;
+  // containerWands = document.querySelector('#wand_information');
+  unicornCore = document.querySelector('#unicorn_core');
+  dragonCore = document.querySelector('#dragon_core');
+  phoenixCore = document.querySelector('#phoenix_core');
+  unkownCore = document.querySelector('#unknown_core');
+  showWands();
+}
+
+pageWand.addEventListener('click', wandPage);
+
+function start() {
+  window.location = 'index.html';
+}
+let startButton = document.querySelector('.home');
+startButton.addEventListener('click', start);
+startButton = document.querySelector('.go-home');
+startButton.addEventListener('click', start);

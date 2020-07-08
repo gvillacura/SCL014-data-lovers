@@ -1,5 +1,4 @@
-export default [
-  {
+export default [{
     name: 'Harry Potter',
     species: 'human',
     gender: 'male',
@@ -86,6 +85,28 @@ export default [
     actor: 'Tom Felton',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/draco.jpg',
+  },
+  {
+    name: 'Albus Dumbledore',
+    species: 'human',
+    gender: 'male',
+    house: 'Gryffindor',
+    dateOfBirth: '04-03-1881',
+    yearOfBirth: '1881',
+    ancestry: 'half-blood',
+    eyeColour: 'blue',
+    hairColour: 'silver',
+    wand: {
+      wood: 'elder',
+      core: 'thestral tail hair',
+      length: 34.5,
+    },
+    patronus: 'phoenix',
+    hogwartsStudent: false,
+    hogwartsStaff: true,
+    actor: 'Michael Gambon',
+    alive: false,
+    image: 'https://fotos.subefotos.com/f5fa911a6f5fe0ed3be15c1faf379dcdo.png',
   },
   {
     name: 'Minerva McGonagall',
