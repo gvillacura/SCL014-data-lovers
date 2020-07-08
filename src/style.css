@@ -102,6 +102,13 @@ header link {
   margin-top: 124px;
 }
 
+.formato_cartas {
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 124px;
+}
+
 .nombre-persona {
   color: #FCB48E;
   width: 186px;
@@ -116,10 +123,39 @@ header link {
 
 }
 
+.patronus-persona {
+  color: #FCB48E;
+  width: 186px;
+  height: 36px;
+  font-family: 'Salsa';
+  font-style: normal;
+  font-size: 22px;
+  line-height: 98.8%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  padding-bottom: 14px;
+
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .foto-persona {
   width: 124px;
   height: 171px;
   border-radius: 10px;
+}
+
+.foto-patronus {
+  width: 195px;
+  height: 253px;
+  border-radius: 10px;
+  position: initial;
+  top: 0;
+
+
+
 }
 
 img {
@@ -142,6 +178,24 @@ img {
   align-items: flex-star;
   flex-direction: column;
 }
+
+.cardBackback {
+  position: absolute;
+  top: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  width: 195px;
+  height: 253px;
+  background: rgb(21, 32, 39);
+  border: #ffc7009c solid;
+  border-radius: 7px;
+  text-align: center;
+  display: flex;
+  align-items: flex-star;
+  flex-direction: column;
+
+}
+
 
 .card-back>div {
   color: #FCB48E;

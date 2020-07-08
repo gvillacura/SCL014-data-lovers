@@ -1,5 +1,6 @@
 import data from './data/potter/potter.js';
 
+
 export const agregarRol = (persona) => {
   let role = '';
   // eslint-disable-next-line no-lone-blocks
@@ -41,6 +42,7 @@ export const filterGender = (gender) => {
   const personajesHome = data.filter(persona => persona.gender === gender);
   return personajesHome;
 };
+
 
 // export const example = () => 'example';
 

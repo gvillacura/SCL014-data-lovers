@@ -3,14 +3,17 @@ import {
   filterHouse,
   filterRole,
   filterGender,
+
 } from './data.js';
 import data from './data/potter/potter.js';
-// Variables utilizadas en filtro.
+
 const house = document.querySelector('#house');
 const role = document.querySelector('#role');
 const gender = document.querySelector('#gender');
-// Variables utilizadas para mostrar página inicial.
 const container = document.querySelector('#cartas');
+const startPatronus = document.querySelector('#patronus');
+
+let containerPatronus;
 // Variables utilizadas para mostrar página de varitas.
 const pageWand = document.querySelector('#wand');
 // let containerWands;
@@ -18,6 +21,93 @@ let unicornCore;
 let dragonCore;
 let phoenixCore;
 let unkownCore;
+
+function showPatronus() {
+  data.forEach((persona) => {
+    const personaElement = document.createElement('article');
+    personaElement.classList.add('information');
+    const cardFront = document.createElement('div');
+    cardFront.classList.add('card-front');
+    const cardBackback = document.createElement('div');
+    cardBackback.classList.add('cardBackback');
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
+    const personaNombreElement = document.createElement('div');
+    personaNombreElement.classList.add('nombre-persona');
+    personaNombreElement.innerHTML = `${persona.name}`;
+
+    // Agregamos la imagen de la persona, le otorgamos una clase y obtenemos la data
+    const fotoElement = document.createElement('img');
+    fotoElement.classList.add('foto-persona');
+    fotoElement.src = persona.image;
+
+    // Agregamos un div para la patronus del personaje, le otorgamos una clase y obtenemos la data
+    const personaPatronusElement = document.createElement('div');
+    personaPatronusElement.classList.add('patronus-persona');
+    personaPatronusElement.innerHTML = ` ${persona.patronus}`;
+
+
+    // Agregamos la imagen del patronus, le otorgamos una clase y obtenemos la data
+    const patronusElement = document.createElement('img');
+    patronusElement.classList.add('foto-patronus');
+    patronusElement.src = persona.imgPatronus;
+
+
+    // Agregamos el div principal de tarjeta a "container".
+    container.append(personaElement);
+    personaElement.append(card);
+
+    // Agregamos el div de la parte frontal y trasera al div principal de tarjeta.
+    card.append(cardFront);
+    card.append(cardBackback);
+
+    // Agregamos la imagen y nombre a la parte frontal.
+    cardFront.append(personaNombreElement);
+    cardFront.append(fotoElement);
+
+    // Agregamos el patronus en la parte trasera.
+    cardBackback.append(personaPatronusElement);
+    cardBackback.append(patronusElement);
+
+    containerPatronus.append(personaElement);
+  });
+}
+
+function patronusPage() {
+  document.querySelector('#pagina_inicial').innerHTML = `
+  <div id="filtros">
+  <select id="house">
+    <option value="">House</option>
+    <option value="Gryffindor"> Gryffindor</option>
+    <option value="Slytherin"> Slytherin</option>
+    <option value="Ravenclaw"> Ravenclaw</option>
+    <option value="Hufflepuff"> Hufflepuff</option>
+  </select>
+  <select id="role">
+    <option value="">Role</option>
+    <option value="Student"> Student</option>
+    <option value="Staff"> Staff</option>
+    <option value="No role"> No role</option>
+  </select>
+  <select id="gender">
+    <option value="">Gender</option>
+    <option value="female"> Female</option>
+    <option value="male"> Male</option>
+  </select>
+</div>
+  <main>
+    <section id="patronus_information" class="formato_cartas">
+    </section>
+  </main>
+  `;
+  containerPatronus = document.querySelector('#patronus_information');
+  showPatronus();
+}
+
+startPatronus.addEventListener('click', patronusPage);
+
 
 function showData(characterData) {
   characterData.forEach((persona) => {

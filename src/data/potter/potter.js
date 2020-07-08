@@ -19,6 +19,7 @@ export default [{
     actor: 'Daniel Radcliffe',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/harry.jpg',
+    imgPatronus: 'https://vignette.wikia.nocookie.net/harrypotter/images/f/fe/Patronus_PM_SilverStagPatronus_MomentIllust.jpg/revision/latest?cb=20170314002945',
   },
   {
     name: 'Hermione Granger',
@@ -41,6 +42,7 @@ export default [{
     actor: 'Emma Watson',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/hermione.jpeg',
+    imgPatronus: 'https://vignette.wikia.nocookie.net/harrypotter/images/f/f3/Hermione_Otter_Patronus.png/revision/latest?cb=20170109003508',
   },
   {
     name: 'Ron Weasley',
@@ -63,6 +65,7 @@ export default [{
     actor: 'Rupert Grint',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/ron.jpg',
+    imgPatronus: 'http://es.web.img2.acsta.net/r_1920_1080/newsv7/16/09/24/13/59/3239940.jpg',
   },
   {
     name: 'Draco Malfoy',
@@ -129,6 +132,7 @@ export default [{
     actor: 'Dame Maggie Smith',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/mcgonagall.jpg',
+    imgPatronus: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7cd8df92-8da7-44ab-9389-023f815c1b64/d6nntsr-ba2632e7-f0f7-4fd3-ad58-de847af8829a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdjZDhkZjkyLThkYTctNDRhYi05Mzg5LTAyM2Y4MTVjMWI2NFwvZDZubnRzci1iYTI2MzJlNy1mMGY3LTRmZDMtYWQ1OC1kZTg0N2FmODgyOWEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.GfHX41zFNMFkLiF3PrsX9QZH90MVDzkAf92MKH4C0Pk',
   },
   {
     name: 'Cedric Diggory',
@@ -173,6 +177,7 @@ export default [{
     actor: 'Katie Leung',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/cho.jpg',
+    imgPatronus: 'https://i.pinimg.com/originals/1b/ce/32/1bce32f92ca4e6a54b7e346780657fe5.jpg',
   },
   {
     name: 'Severus Snape',
@@ -195,6 +200,7 @@ export default [{
     actor: 'Alan Rickman',
     alive: false,
     image: 'http://hp-api.herokuapp.com/images/snape.jpg',
+    imgPatronus: 'https://images.ctfassets.net/usf1vwtuqyxm/4UY6uN1NXOgIyO8suQGqUM/ec7de1c7b8be957cd729b2f57a880400/7.19.1_SilverDoe_Colour_01VG.jpg?w=914',
   },
   {
     name: 'Rubeus Hagrid',
@@ -261,6 +267,7 @@ export default [{
     actor: 'Evanna Lynch',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/luna.jpg',
+    imgPatronus: 'https://vignette.wikia.nocookie.net/harrypotter/images/f/f8/Patronus_Hare.jpg/revision/latest?cb=20170109002548',
   },
   {
     name: 'Ginny Weasley',
@@ -283,6 +290,7 @@ export default [{
     actor: 'Bonnie Wright',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/ginny.jpg',
+    imgPatronus: 'https://pm1.narvii.com/5809/a0ab65e0b6ca2c478179ee64a932d663582bafbb_hq.jpg',
   },
   {
     name: 'Sirius Black',
@@ -305,6 +313,7 @@ export default [{
     actor: 'Gary Oldman',
     alive: false,
     image: 'http://hp-api.herokuapp.com/images/sirius.JPG',
+    imgPatronus: 'https://vignette.wikia.nocookie.net/harrypotter/images/f/f8/Patronus_Hare.jpg/revision/latest?cb=20170109002548',
   },
   {
     name: 'Remus Lupin',
@@ -327,6 +336,7 @@ export default [{
     actor: 'David Thewlis',
     alive: false,
     image: 'http://hp-api.herokuapp.com/images/lupin.jpg',
+    imgPatronus: 'https://pm1.narvii.com/6253/0ac78ae011a1b4dc01e4cb27fd868e174cbe992d_hq.jpg',
   },
   {
     name: 'Arthur Weasley',
@@ -349,6 +359,7 @@ export default [{
     actor: 'Mark Williams',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/arthur.jpg',
+    imgPatronus: 'https://i.pinimg.com/originals/c4/b4/bb/c4b4bb73a5b9fccabe804f2c6de23eb2.jpg',
   },
   {
     name: 'Bellatrix Lestrange',
@@ -437,6 +448,7 @@ export default [{
     actor: 'George Harris',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/kingsley.jpg',
+    imgPatronus: 'https://pm1.narvii.com/6005/7c638af8698d91f7509c8d6fcd35f625b8af5e37_hq.jpg',
   },
   {
     name: 'Dolores Umbridge',
@@ -459,6 +471,7 @@ export default [{
     actor: 'Imelda Staunton',
     alive: true,
     image: 'http://hp-api.herokuapp.com/images/umbridge.jpg',
+    imgPatronus: 'https://i0.statig.com.br/bancodeimagens/dk/3r/cp/dk3rcpdzmjkgbkitihhqoghi0.jpg',
   },
   {
     name: 'Lucius Malfoy',
