@@ -125,11 +125,11 @@ header link {
   text-align: center;
   letter-spacing: 0.04em;
   padding-bottom: 14px;
-  text-shadow: 0.9px 0.9px #ffc700;
   position: absolute;
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-shadow: 0.9px 0.9px #ffc700;
 }
 
 .foto-persona {
