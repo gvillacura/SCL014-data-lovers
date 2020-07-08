@@ -1,11 +1,6 @@
 @font-face {
   font-family: 'Salsa';
   src: URL('../fonts/Salsa-Regular.ttf') format('truetype');
-
-}
-
-img {
-  max-width: 100%;
 }
 
 .link-conteiner {
@@ -35,7 +30,6 @@ header link {
   justify-content: flex-end;
 }
 
-
 #logo {
   position: absolute;
   width: 179px;
@@ -59,7 +53,6 @@ header link {
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFC700;
-
 }
 
 #menu span {
@@ -120,11 +113,9 @@ header link {
   text-align: center;
   letter-spacing: 0.04em;
   padding-bottom: 14px;
-
 }
 
 .patronus-persona {
-  color: #FCB48E;
   width: 186px;
   height: 36px;
   font-family: 'Salsa';
@@ -134,7 +125,7 @@ header link {
   text-align: center;
   letter-spacing: 0.04em;
   padding-bottom: 14px;
-
+  text-shadow: 0.9px 0.9px #ffc700;
   position: absolute;
   top: 90%;
   left: 50%;
@@ -153,9 +144,6 @@ header link {
   border-radius: 10px;
   position: initial;
   top: 0;
-
-
-
 }
 
 img {
@@ -193,7 +181,6 @@ img {
   display: flex;
   align-items: flex-star;
   flex-direction: column;
-
 }
 
 
@@ -261,7 +248,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .core-title {
@@ -319,7 +305,11 @@ ul.topnav li a {
   margin-top: 0.5em;
 }
 
-ul.topnav li a:hover:not(.active) {
+ul.topnav li a:hover {
+  color: #FFEB3B;
+}
+
+ul.topnav li a:focus {
   background-color: #112;
 }
 

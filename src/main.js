@@ -77,26 +77,6 @@ function showPatronus() {
 
 function patronusPage() {
   document.querySelector('#pagina_inicial').innerHTML = `
-  <div id="filtros">
-  <select id="house">
-    <option value="">House</option>
-    <option value="Gryffindor"> Gryffindor</option>
-    <option value="Slytherin"> Slytherin</option>
-    <option value="Ravenclaw"> Ravenclaw</option>
-    <option value="Hufflepuff"> Hufflepuff</option>
-  </select>
-  <select id="role">
-    <option value="">Role</option>
-    <option value="Student"> Student</option>
-    <option value="Staff"> Staff</option>
-    <option value="No role"> No role</option>
-  </select>
-  <select id="gender">
-    <option value="">Gender</option>
-    <option value="female"> Female</option>
-    <option value="male"> Male</option>
-  </select>
-</div>
   <main>
     <section id="patronus_information" class="formato_cartas">
     </section>
@@ -105,9 +85,7 @@ function patronusPage() {
   containerPatronus = document.querySelector('#patronus_information');
   showPatronus();
 }
-
 startPatronus.addEventListener('click', patronusPage);
-
 
 function showData(characterData) {
   characterData.forEach((persona) => {

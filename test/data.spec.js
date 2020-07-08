@@ -80,6 +80,7 @@ describe('filterGender', () => {
         actor: 'Emma Watson',
         alive: true,
         image: 'http://hp-api.herokuapp.com/images/hermione.jpeg',
+        imgPatronus: 'https://vignette.wikia.nocookie.net/harrypotter/images/f/f3/Hermione_Otter_Patronus.png/revision/latest?cb=20170109003508',
       },
       {
         name: 'Minerva McGonagall',
@@ -102,6 +103,7 @@ describe('filterGender', () => {
         actor: 'Dame Maggie Smith',
         alive: true,
         image: 'http://hp-api.herokuapp.com/images/mcgonagall.jpg',
+        imgPatronus: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7cd8df92-8da7-44ab-9389-023f815c1b64/d6nntsr-ba2632e7-f0f7-4fd3-ad58-de847af8829a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdjZDhkZjkyLThkYTctNDRhYi05Mzg5LTAyM2Y4MTVjMWI2NFwvZDZubnRzci1iYTI2MzJlNy1mMGY3LTRmZDMtYWQ1OC1kZTg0N2FmODgyOWEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.GfHX41zFNMFkLiF3PrsX9QZH90MVDzkAf92MKH4C0Pk',
       },
       {
         name: 'Cho Chang',
@@ -124,6 +126,7 @@ describe('filterGender', () => {
         actor: 'Katie Leung',
         alive: true,
         image: 'http://hp-api.herokuapp.com/images/cho.jpg',
+        imgPatronus: 'https://i.pinimg.com/originals/1b/ce/32/1bce32f92ca4e6a54b7e346780657fe5.jpg',
       },
       {
         name: 'Luna Lovegood',
@@ -146,6 +149,7 @@ describe('filterGender', () => {
         actor: 'Evanna Lynch',
         alive: true,
         image: 'http://hp-api.herokuapp.com/images/luna.jpg',
+        imgPatronus: 'https://vignette.wikia.nocookie.net/harrypotter/images/f/f8/Patronus_Hare.jpg/revision/latest?cb=20170109002548',
       },
       {
         name: 'Ginny Weasley',
@@ -168,6 +172,7 @@ describe('filterGender', () => {
         actor: 'Bonnie Wright',
         alive: true,
         image: 'http://hp-api.herokuapp.com/images/ginny.jpg',
+        imgPatronus: 'https://pm1.narvii.com/5809/a0ab65e0b6ca2c478179ee64a932d663582bafbb_hq.jpg',
       },
       {
         name: 'Bellatrix Lestrange',
@@ -190,6 +195,7 @@ describe('filterGender', () => {
         actor: 'Helena Bonham Carter',
         alive: false,
         image: 'http://hp-api.herokuapp.com/images/bellatrix.jpg',
+
       },
       {
         name: 'Dolores Umbridge',
@@ -212,6 +218,7 @@ describe('filterGender', () => {
         actor: 'Imelda Staunton',
         alive: true,
         image: 'http://hp-api.herokuapp.com/images/umbridge.jpg',
+        imgPatronus: 'https://i0.statig.com.br/bancodeimagens/dk/3r/cp/dk3rcpdzmjkgbkitihhqoghi0.jpg',
       },
       {
         name: 'Mrs Norris',
