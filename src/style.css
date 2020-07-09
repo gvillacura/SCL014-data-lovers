@@ -183,7 +183,6 @@ img {
   flex-direction: column;
 }
 
-
 .card-back>div {
   color: #FCB48E;
   height: 38px;
@@ -212,7 +211,9 @@ img {
   text-align: center;
   letter-spacing: 0.04em;
   padding-bottom: 0px;
+  padding-left: 14px;
   margin-bottom: -4px;
+  margin-right: 0px;
   text-decoration: underline;
 }
 
@@ -242,8 +243,12 @@ img {
   flex-direction: column;
 }
 
-.img-wands {
+.type-wand>div {
+  text-align: center;
+  padding-left: 0;
+}
 
+.img-wands {
   height: 134px;
   display: flex;
   align-items: center;

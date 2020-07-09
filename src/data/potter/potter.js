@@ -110,6 +110,7 @@ export default [{
     actor: 'Michael Gambon',
     alive: false,
     image: 'https://fotos.subefotos.com/f5fa911a6f5fe0ed3be15c1faf379dcdo.png',
+    imgPatronus: 'https://fotos.subefotos.com/0f42dbd98dc91cf1f20e3f3286fbfb42o.jpg',
   },
   {
     name: 'Minerva McGonagall',

@@ -24,6 +24,9 @@ let unkownCore;
 
 function showPatronus() {
   data.forEach((persona) => {
+    if (persona.patronus === '') {
+      return;
+    }
     const personaElement = document.createElement('article');
     personaElement.classList.add('information');
     const cardFront = document.createElement('div');
@@ -278,7 +281,7 @@ function showWands() {
       personaElement.append(lenghtElement);
     }
 
-    if (persona.wand.core === '' || persona.wand.core === 'thestral tail hair') {
+    if (persona.wand.core === '' || persona.wand.core === 'thestral tail hair' || persona.wand.core === 'unknown') {
       if (persona.wand.core === '') {
         // eslint-disable-next-line no-param-reassign
         persona.wand.core = 'unknown';
