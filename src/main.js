@@ -84,6 +84,9 @@ function patronusPage() {
     <section id="patronus_information" class="formato_cartas">
     </section>
   </main>
+  <footer>
+  <p> Adarleika and Geraldine &copy; Copyright 2020
+  </footer>
   `;
   containerPatronus = document.querySelector('#patronus_information');
   showPatronus();
@@ -349,6 +352,9 @@ function wandPage() {
       </div>
       </section>
     </main>
+    <footer>
+    <p> Adarleika and Geraldine &copy; Copyright 2020
+  </footer>
 `;
   // containerWands = document.querySelector('#wand_information');
   unicornCore = document.querySelector('#unicorn_core');
