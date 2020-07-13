@@ -3,6 +3,8 @@ import {
   filterHouse,
   filterRole,
   filterGender,
+  filterName,
+  
 
 } from './data.js';
 import data from './data/potter/potter.js';
@@ -12,6 +14,7 @@ const role = document.querySelector('#role');
 const gender = document.querySelector('#gender');
 const container = document.querySelector('#cartas');
 const startPatronus = document.querySelector('#patronus');
+
 
 let containerPatronus;
 // Variables utilizadas para mostrar página de varitas.
@@ -195,6 +198,15 @@ function selectGender() {
   container.innerHTML = '';
   showData(genderElement);
 }
+
+// Buscador
+const nameSearch = document.getElementById('nameSearch');
+nameSearch.addEventListener('keyup', (event) => {
+  const searchFilter = filterName(event);
+  container.innerHTML = ''; 
+  showData(searchFilter);
+});
+
 
 house.addEventListener('change', selectHouse);
 role.addEventListener('change', selectRole);
