@@ -14,6 +14,7 @@ const gender = document.querySelector('#gender');
 const container = document.querySelector('#cartas');
 const startPatronus = document.querySelector('#patronus');
 
+
 let containerPatronus;
 // Variables utilizadas para mostrar página de varitas.
 const pageWand = document.querySelector('#wand');
