@@ -91,15 +91,7 @@ header link {
   justify-content: space-evenly;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 124px;
   min-height: 30em;
-}
-
-.formato_cartas {
-  justify-content: space-evenly;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 124px;
 }
 
 .nombre-persona {
@@ -351,8 +343,6 @@ ul.topnav li a:focus {
 
 #filtros {
   margin-top: 99px;
-  position: absolute;
-  cursor: pointer;
   width: 100%;
   text-align: center;
 }
