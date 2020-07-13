@@ -33,9 +33,8 @@ header link {
 #logo {
   position: absolute;
   width: 179px;
-  height: 179px;
   left: 17px;
-  top: -45px;
+  top: 10px;
 }
 
 #menu {
@@ -93,6 +92,7 @@ header link {
   display: flex;
   flex-wrap: wrap;
   margin-top: 124px;
+  min-height: 30em;
 }
 
 .formato_cartas {
@@ -232,7 +232,7 @@ img {
 
 .core-wand {
   width: 248px;
-  min-height: 110vh;
+  min-height: 88%;
   background: rgb(21, 32, 39);
   border: #ffc7009c solid;
   border-radius: 7px;
@@ -352,8 +352,9 @@ ul.topnav li a:focus {
 #filtros {
   margin-top: 99px;
   position: absolute;
-  left: 35%;
   cursor: pointer;
+  width: 100%;
+  text-align: center;
 }
 
 #filtros select:hover {
@@ -380,6 +381,40 @@ footer {
   color: #FFC700;
   position: sticky;
   bottom: 0;
+  height: 42px;
 
+}
 
+footer p {
+  margin: 2px 0 2px 0;
+  padding-top: 10px;
+}
+
+input {
+  border: 0;
+  border-bottom: 1px solid #9e7b1d;
+  background: transparent;
+  padding: 8px 0px 5px 28px;
+  font-size: 20px;
+  margin-left: 14px;
+  color: #617575;
+  width: 147px;
+  font-family: open sans-serif;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #9e7b1d;
+}
+
+.line {
+  display: inline;
+}
+
+input[type='text'] {
+  background-image: url(Media/lupa.png);
+  background-position: 1px 9px;
+  background-repeat: no-repeat;
+  background-size: 19px;
 }

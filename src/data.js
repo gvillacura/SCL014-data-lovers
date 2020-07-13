@@ -43,6 +43,11 @@ export const filterGender = (gender) => {
   return personajesHome;
 };
 
+export const filterName = (event) => {
+  const term = event.target.value.toUpperCase();
+  return data.filter(persona => persona.name.toUpperCase().indexOf(term) !== -1);
+};
+
 
 // export const example = () => 'example';
 

@@ -3,6 +3,7 @@ import {
   filterHouse,
   filterRole,
   filterGender,
+  filterName,
 
 } from './data.js';
 import data from './data/potter/potter.js';
@@ -165,6 +166,15 @@ function showData(characterData) {
   });
 }
 showData(data);
+
+// Buscador
+
+const nameSearch = document.getElementById('nameSearch');
+nameSearch.addEventListener('keyup', (event) => {
+  const searchFilter = filterName(event);
+  container.innerHTML = '';
+  showData(searchFilter);
+});
 
 // Filtro 'House'
 function selectHouse() {
