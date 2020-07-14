@@ -24,77 +24,6 @@ let dragonCore;
 let phoenixCore;
 let unkownCore;
 
-function showPatronus() {
-  data.forEach((persona) => {
-    if (persona.patronus === '') {
-      return;
-    }
-    const personaElement = document.createElement('article');
-    personaElement.classList.add('information');
-    const cardFront = document.createElement('div');
-    cardFront.classList.add('card-front');
-    const cardBackback = document.createElement('div');
-    cardBackback.classList.add('cardBackback');
-    const card = document.createElement('div');
-    card.classList.add('card');
-
-    // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
-    const personaNombreElement = document.createElement('div');
-    personaNombreElement.classList.add('nombre-persona');
-    personaNombreElement.innerHTML = `${persona.name}`;
-
-    // Agregamos la imagen de la persona, le otorgamos una clase y obtenemos la data
-    const fotoElement = document.createElement('img');
-    fotoElement.classList.add('foto-persona');
-    fotoElement.src = persona.image;
-
-    // Agregamos un div para la patronus del personaje, le otorgamos una clase y obtenemos la data
-    const personaPatronusElement = document.createElement('div');
-    personaPatronusElement.classList.add('patronus-persona');
-    personaPatronusElement.innerHTML = ` ${persona.patronus}`;
-
-
-    // Agregamos la imagen del patronus, le otorgamos una clase y obtenemos la data
-    const patronusElement = document.createElement('img');
-    patronusElement.classList.add('foto-patronus');
-    patronusElement.src = persona.imgPatronus;
-
-
-    // Agregamos el div principal de tarjeta a "container".
-    container.append(personaElement);
-    personaElement.append(card);
-
-    // Agregamos el div de la parte frontal y trasera al div principal de tarjeta.
-    card.append(cardFront);
-    card.append(cardBackback);
-
-    // Agregamos la imagen y nombre a la parte frontal.
-    cardFront.append(personaNombreElement);
-    cardFront.append(fotoElement);
-
-    // Agregamos el patronus en la parte trasera.
-    cardBackback.append(personaPatronusElement);
-    cardBackback.append(patronusElement);
-
-    containerPatronus.append(personaElement);
-  });
-}
-
-function patronusPage() {
-  document.querySelector('#pagina_inicial').innerHTML = `
-  <main>
-    <section id="patronus_information" class="formato_cartas">
-    </section>
-  </main>
-  <footer>
-  <p> Adarleika and Geraldine &copy; Copyright 2020
-  </footer>
-  `;
-  containerPatronus = document.querySelector('#patronus_information');
-  showPatronus();
-}
-startPatronus.addEventListener('click', patronusPage);
-
 function showData(characterData) {
   characterData.forEach((persona) => {
     // Div principal de tarjeta con un div para la parte frontal y otro para la parte trasera.
@@ -168,6 +97,62 @@ function showData(characterData) {
 }
 showData(data);
 
+function showPatronus(patronusData) {
+  patronusData.forEach((persona) => {
+    if (persona.patronus === '') {
+      return;
+    }
+    const personaElement = document.createElement('article');
+    personaElement.classList.add('information');
+    const cardFront = document.createElement('div');
+    cardFront.classList.add('card-front');
+    const cardBackback = document.createElement('div');
+    cardBackback.classList.add('cardBackback');
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
+    const personaNombreElement = document.createElement('div');
+    personaNombreElement.classList.add('nombre-persona');
+    personaNombreElement.innerHTML = `${persona.name}`;
+
+    // Agregamos la imagen de la persona, le otorgamos una clase y obtenemos la data
+    const fotoElement = document.createElement('img');
+    fotoElement.classList.add('foto-persona');
+    fotoElement.src = persona.image;
+
+    // Agregamos un div para la patronus del personaje, le otorgamos una clase y obtenemos la data
+    const personaPatronusElement = document.createElement('div');
+    personaPatronusElement.classList.add('patronus-persona');
+    personaPatronusElement.innerHTML = ` ${persona.patronus}`;
+
+
+    // Agregamos la imagen del patronus, le otorgamos una clase y obtenemos la data
+    const patronusElement = document.createElement('img');
+    patronusElement.classList.add('foto-patronus');
+    patronusElement.src = persona.imgPatronus;
+
+
+    // Agregamos el div principal de tarjeta a "container".
+    container.append(personaElement);
+    personaElement.append(card);
+
+    // Agregamos el div de la parte frontal y trasera al div principal de tarjeta.
+    card.append(cardFront);
+    card.append(cardBackback);
+
+    // Agregamos la imagen y nombre a la parte frontal.
+    cardFront.append(personaNombreElement);
+    cardFront.append(fotoElement);
+
+    // Agregamos el patronus en la parte trasera.
+    cardBackback.append(personaPatronusElement);
+    cardBackback.append(patronusElement);
+
+    containerPatronus.append(personaElement);
+  });
+}
+
 // Buscador
 
 const nameSearch = document.getElementById('nameSearch');
@@ -176,6 +161,30 @@ nameSearch.addEventListener('keyup', (event) => {
   container.innerHTML = '';
   showData(searchFilter);
 });
+
+function patronusPage() {
+  document.querySelector('#pagina_inicial').innerHTML = `
+  <main>
+    <section id="patronus_information" class="formato_cartas">
+    </section>
+  </main>
+  <footer>
+  <p> Adarleika and Geraldine &copy; Copyright 2020
+  </footer>
+  `;
+  containerPatronus = document.querySelector('#patronus_information');
+  showPatronus(data);
+
+  // Buscador
+
+  const nameSearchPatronus = document.getElementById('nameSearch');
+  nameSearchPatronus.addEventListener('keyup', (event) => {
+    const searchFilter = filterName(event);
+    containerPatronus.innerHTML = '';
+    showPatronus(searchFilter);
+  });
+}
+startPatronus.addEventListener('click', patronusPage);
 
 // Filtro 'House'
 function selectHouse() {
@@ -364,7 +373,7 @@ function wandPage() {
       </section>
     </main>
     <footer>
-    <p> Adarleika and Geraldine &copy; Copyright 2020
+    <p> Adarleika and Geraldine &copy; Copyright 2020 </p>
   </footer>
 `;
   // containerWands = document.querySelector('#wand_information');
