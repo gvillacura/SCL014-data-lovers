@@ -23,7 +23,7 @@ header {
 
 #pagina_inicial {
   width: 100%;
-  padding-top: 113px;
+  padding-top: 7em;
 }
 
 header link {
@@ -406,8 +406,8 @@ input[type='text'] {
   background-position: 1px 9px;
   background-repeat: no-repeat;
   background-size: 19px;
+  color: #FFC700;
 }
-
 
 #search {
   background-position: 10px 12px;
