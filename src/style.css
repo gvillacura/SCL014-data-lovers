@@ -23,6 +23,7 @@ header {
 
 #pagina_inicial {
   width: 100%;
+  padding-top: 2em;
 }
 
 header link {
@@ -92,6 +93,7 @@ header link {
   display: flex;
   flex-wrap: wrap;
   min-height: 30em;
+  padding-top: 3em;
 }
 
 .nombre-persona {
@@ -407,19 +409,7 @@ input[type='text'] {
   background-position: 1px 9px;
   background-repeat: no-repeat;
   background-size: 19px;
+  color: #FFC700;
 }
 
 
-#search {
-  /*background-image: url('/css/searchicon.png');*/
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  /*width: 100%;*/
-  font-size: 16px;
-  /*padding: 12px 20px 12px 40px;*/
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-
-  padding: 10px;
-  width: 147px;
-}
