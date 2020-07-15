@@ -13,8 +13,6 @@ const role = document.querySelector('#role');
 const gender = document.querySelector('#gender');
 const container = document.querySelector('#cartas');
 const startPatronus = document.querySelector('#patronus');
-
-
 let containerPatronus;
 // Variables utilizadas para mostrar página de varitas.
 const pageWand = document.querySelector('#wand');
@@ -23,6 +21,10 @@ let unicornCore;
 let dragonCore;
 let phoenixCore;
 let unkownCore;
+let containerUnicorn;
+let containerDragon;
+let containerPhoenix;
+let containerOther;
 
 function showData(characterData) {
   characterData.forEach((persona) => {
@@ -97,6 +99,48 @@ function showData(characterData) {
 }
 showData(data);
 
+// Buscador
+const nameSearch = document.getElementById('nameSearch');
+nameSearch.addEventListener('keyup', (event) => {
+  const searchFilter = filterName(event);
+  container.innerHTML = '';
+  showData(searchFilter);
+});
+
+// Filtro 'House'
+function selectHouse() {
+  document.querySelector('#role').value = '';
+  document.querySelector('#gender').value = '';
+  const houseFilter = house.value;
+  const houseElement = filterHouse(houseFilter);
+  container.innerHTML = '';
+  showData(houseElement);
+}
+
+// Filtro 'Role'
+function selectRole() {
+  document.querySelector('#house').value = '';
+  document.querySelector('#gender').value = '';
+  const roleFilter = role.value;
+  const roleElement = filterRole(roleFilter);
+  container.innerHTML = '';
+  showData(roleElement);
+}
+
+// Filtro 'Gender'
+function selectGender() {
+  document.querySelector('#house').value = '';
+  document.querySelector('#role').value = '';
+  const genderFilter = gender.value;
+  const genderElement = filterGender(genderFilter);
+  container.innerHTML = '';
+  showData(genderElement);
+}
+
+house.addEventListener('change', selectHouse);
+role.addEventListener('change', selectRole);
+gender.addEventListener('change', selectGender);
+
 function showPatronus(patronusData) {
   patronusData.forEach((persona) => {
     if (persona.patronus === '') {
@@ -134,7 +178,6 @@ function showPatronus(patronusData) {
 
 
     // Agregamos el div principal de tarjeta a "container".
-    container.append(personaElement);
     personaElement.append(card);
 
     // Agregamos el div de la parte frontal y trasera al div principal de tarjeta.
@@ -153,15 +196,6 @@ function showPatronus(patronusData) {
   });
 }
 
-// Buscador
-
-const nameSearch = document.getElementById('nameSearch');
-nameSearch.addEventListener('keyup', (event) => {
-  const searchFilter = filterName(event);
-  container.innerHTML = '';
-  showData(searchFilter);
-});
-
 function patronusPage() {
   document.querySelector('#pagina_inicial').innerHTML = `
   <main>
@@ -174,9 +208,9 @@ function patronusPage() {
   `;
   containerPatronus = document.querySelector('#patronus_information');
   showPatronus(data);
+  nameSearch.value = '';
 
   // Buscador
-
   const nameSearchPatronus = document.getElementById('nameSearch');
   nameSearchPatronus.addEventListener('keyup', (event) => {
     const searchFilter = filterName(event);
@@ -186,43 +220,9 @@ function patronusPage() {
 }
 startPatronus.addEventListener('click', patronusPage);
 
-// Filtro 'House'
-function selectHouse() {
-  document.querySelector('#role').value = '';
-  document.querySelector('#gender').value = '';
-  const houseFilter = house.value;
-  const houseElement = filterHouse(houseFilter);
-  container.innerHTML = '';
-  showData(houseElement);
-}
-
-// Filtro 'Role'
-function selectRole() {
-  document.querySelector('#house').value = '';
-  document.querySelector('#gender').value = '';
-  const roleFilter = role.value;
-  const roleElement = filterRole(roleFilter);
-  container.innerHTML = '';
-  showData(roleElement);
-}
-
-// Filtro 'Gender'
-function selectGender() {
-  document.querySelector('#house').value = '';
-  document.querySelector('#role').value = '';
-  const genderFilter = gender.value;
-  const genderElement = filterGender(genderFilter);
-  container.innerHTML = '';
-  showData(genderElement);
-}
-
-house.addEventListener('change', selectHouse);
-role.addEventListener('change', selectRole);
-gender.addEventListener('change', selectGender);
-
 // Función para armar y obtener data de la página de varitas.
-function showWands() {
-  data.forEach((persona) => {
+function showWands(wandsData) {
+  wandsData.forEach((persona) => {
     if (persona.wand.wood === '' && persona.wand.length === '') {
       return;
     }
@@ -250,6 +250,7 @@ function showWands() {
       lenghtElement.innerHTML = `
         <span> Length: </span>${persona.wand.length}`;
       personaElement.append(lenghtElement);
+      containerUnicorn.append(personaElement);
     }
 
     if (persona.wand.core === 'dragon heartstring') {
@@ -272,10 +273,11 @@ function showWands() {
 
       // Agregamos un div para el largo de la varita, le otorgamos una clase y obtenemos la data
       const lenghtElement = document.createElement('div');
-      lenghtElement.classList.add('core_of_wand');
+      lenghtElement.classList.add('length_of_wand');
       lenghtElement.innerHTML = `
         <span> Length: </span>${persona.wand.length}`;
       personaElement.append(lenghtElement);
+      containerDragon.append(personaElement);
     }
 
     if (persona.wand.core === 'phoenix feather') {
@@ -298,10 +300,11 @@ function showWands() {
 
       // Agregamos un div para el largo de la varita, le otorgamos una clase y obtenemos la data
       const lenghtElement = document.createElement('div');
-      lenghtElement.classList.add('core_of_wand');
+      lenghtElement.classList.add('length_of_wand');
       lenghtElement.innerHTML = `
         <span> Length: </span>${persona.wand.length}`;
       personaElement.append(lenghtElement);
+      containerPhoenix.append(personaElement);
     }
 
     if (persona.wand.core === '' || persona.wand.core === 'thestral tail hair' || persona.wand.core === 'unknown') {
@@ -335,10 +338,10 @@ function showWands() {
 
       // Agregamos un div para el largo de la varita, le otorgamos una clase y obtenemos la data
       const lenghtElement = document.createElement('div');
-      lenghtElement.classList.add('core_of_wand');
+      lenghtElement.classList.add('length_of_wand');
       lenghtElement.innerHTML = `
         <span> Length: </span>${persona.wand.length}`;
-      personaElement.append(lenghtElement);
+      containerOther.append(personaElement);
     }
   });
 }
@@ -350,24 +353,29 @@ function wandPage() {
       <div class = "core-title">
         <h2 >Unicorn tail-hair core</h2>
         <div id = "unicorn_core" class = "core-wand">
-          <div class = "img-wands"><img class="image-core" src="Media/Unicornio.png" alt=""></div></div>
+          <div class = "img-wands"><img class="image-core" src="Media/Unicornio.png" alt=""></div>
+          <div id= "container-unicorn"></div>
+        </div>
       </div>
       <div class = "core-title">
-        <h2 class = "core-title">Dragon heartstring core</h2>
+        <h2 >Dragon heartstring core</h2>
         <div id = "dragon_core" class = "core-wand">
           <div class = "img-wands"><img class="image-core dragon-image" src="Media/dragon.png" alt=""></div>
+          <div id= "container-dragon"></div>
         </div>
       </div>
       <div class = "core-title">
         <h2>Phoenix feather core</h2>
         <div id = "phoenix_core" class = "core-wand">
           <div class = "img-wands"><img class="image-core" src="Media/phoenix.png" alt=""></div>
+          <div id= "container-phoenix"></div>
         </div>
       </div>
       <div class = "core-title">
         <h2 ">Another core</h2>
         <div id = "unknown_core" class = "core-wand">
         <div class = "img-wands"><img class="image-core" src="Media/varita.png" alt=""></div>
+        <div id= "container-another"></div>
         </div>
       </div>
       </section>
@@ -376,14 +384,27 @@ function wandPage() {
     <p> Adarleika and Geraldine &copy; Copyright 2020 </p>
   </footer>
 `;
-  // containerWands = document.querySelector('#wand_information');
+  containerUnicorn = document.querySelector('#container-unicorn');
+  containerDragon = document.querySelector('#container-dragon');
+  containerPhoenix = document.querySelector('#container-phoenix');
+  containerOther = document.querySelector('#container-another');
   unicornCore = document.querySelector('#unicorn_core');
   dragonCore = document.querySelector('#dragon_core');
   phoenixCore = document.querySelector('#phoenix_core');
   unkownCore = document.querySelector('#unknown_core');
-  showWands();
+  showWands(data);
+  nameSearch.value = '';
+  // Buscador
+  const nameSearchWand = document.getElementById('nameSearch');
+  nameSearchWand.addEventListener('keyup', (event) => {
+    const searchFilter = filterName(event);
+    containerUnicorn.innerHTML = '';
+    containerDragon.innerHTML = '';
+    containerPhoenix.innerHTML = '';
+    containerOther.innerHTML = '';
+    showWands(searchFilter);
+  });
 }
-
 pageWand.addEventListener('click', wandPage);
 
 function start() {
