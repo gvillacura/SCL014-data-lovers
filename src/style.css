@@ -12,7 +12,9 @@
 body {
   background-image: url('Media/fondo_negro2.png');
   display: flex;
+  list-style: none;
 }
+
 
 header {
   z-index: 100;
@@ -20,6 +22,7 @@ header {
   width: 100%;
   left: 0px;
 }
+
 
 #pagina_inicial {
   width: 100%;
@@ -275,7 +278,7 @@ span {
   color: #ffc7009c;
   margin: 0;
 }
-
+/*
 ul {
   position: fixed;
   top: 0;
@@ -319,7 +322,7 @@ ul.topnav li a:focus {
     float: none;
   }
 }
-
+*/
 .link {
   width: 100px;
   padding: 10px;
@@ -441,25 +444,114 @@ input[type='text'] {
   top: 2.5em;
 }
 
+/*
 @media (max-width: 600px) {
-  .topnav {
+  nav {
     width: 100%;
     height: 10%;
     display: block;
   }
 
-  .topnav li {
+  nav li {
     display: block;
     margin: 20px 0px 0px 50px;
   }
 }
+*/
 
-.topnav li {
-  display: flex;
+/* NAV NUEVOS ESTILOS CON RESPONSIVE*/
+
+nav {
+  background-color: #333;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 80px;
+  width: 100%;
   list-style: none;
+}
 
-  margin-left: 200px;
-  /*padding: 10px 20px;*/
-  font-size: 1.1rem;
-  transition: all 0.5s;
+label.go-home{
+  line-height: 80px;
+  padding: 0 100px;
+
+}
+
+nav ul{
+  float: right;
+  margin: 20px;
+
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 40px;
+  margin: 0 5px
+}
+
+nav ul li a{
+  color: #FFC700;
+  font-size: 24px;
+
+}
+
+nav li a:hover {
+  color: #FFEB3B;
+}
+
+nav li a:focus {
+  background-color: #112;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: #FFC700;
+  float: right;
+  line-height: 80px;
+  margin-right: 25px;
+  display: none;
+  cursor: pointer;
+}
+
+#check {
+  display: none;
+}
+
+
+@media (max-width: 952px) {
+  label.go-home{
+    padding-left: 50px;
+  }
+
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 858px) {
+  .checkbtn{
+    display: block;
+  }
+  ul {
+    position: fixed;
+    float: right;
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  
+  #check:checked ~ ul {
+    left: 0;
+  }
 }
