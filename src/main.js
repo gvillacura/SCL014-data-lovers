@@ -410,7 +410,10 @@ pageWand.addEventListener('click', wandPage);
 function start() {
   window.location = 'index.html';
 }
+
+
 let startButton = document.querySelector('.home');
 startButton.addEventListener('click', start);
 startButton = document.querySelector('.go-home');
 startButton.addEventListener('click', start);
+
