@@ -16,15 +16,14 @@ const startPatronus = document.querySelector('#patronus');
 let containerPatronus;
 // Variables utilizadas para mostrar página de varitas.
 const pageWand = document.querySelector('#wand');
-// let containerWands;
-let unicornCore;
-let dragonCore;
-let phoenixCore;
-let unkownCore;
 let containerUnicorn;
 let containerDragon;
 let containerPhoenix;
 let containerOther;
+let unicornSection;
+let dragonSection;
+let phoenixSection;
+let unknownSection;
 
 function showData(characterData) {
   characterData.forEach((persona) => {
@@ -99,10 +98,11 @@ function showData(characterData) {
 }
 showData(data);
 
-// Buscador
-const nameSearch = document.getElementById('nameSearch');
+// Buscador por nombre.
+const nameSearch = document.querySelector('#nameSearch');
 nameSearch.addEventListener('keyup', (event) => {
-  const searchFilter = filterName(event);
+  const term = event.target.value;
+  const searchFilter = filterName(term);
   container.innerHTML = '';
   showData(searchFilter);
 });
@@ -213,23 +213,49 @@ function patronusPage() {
   // Buscador
   const nameSearchPatronus = document.getElementById('nameSearch');
   nameSearchPatronus.addEventListener('keyup', (event) => {
-    const searchFilter = filterName(event);
+    const term = event.target.value;
+    const searchFilter = filterName(term);
     containerPatronus.innerHTML = '';
     showPatronus(searchFilter);
   });
 }
 startPatronus.addEventListener('click', patronusPage);
 
+// Esconder secciones vacías.
+function hideSection() {
+  if (containerUnicorn.children.length === 0) {
+    unicornSection.style.display = 'none';
+  } else {
+    unicornSection.style.display = 'block';
+  }
+  if (containerDragon.children.length === 0) {
+    dragonSection.style.display = 'none';
+  } else {
+    dragonSection.style.display = 'block';
+  }
+  if (containerPhoenix.children.length === 0) {
+    phoenixSection.style.display = 'none';
+  } else {
+    phoenixSection.style.display = 'block';
+  }
+  if (containerOther.children.length === 0) {
+    unknownSection.style.display = 'none';
+  } else {
+    unknownSection.style.display = 'block';
+  }
+}
+
 // Función para armar y obtener data de la página de varitas.
 function showWands(wandsData) {
   wandsData.forEach((persona) => {
+    // Si no hay información de la madera y largo, estas no se muestran.
     if (persona.wand.wood === '' && persona.wand.length === '') {
       return;
     }
+
     if (persona.wand.core === 'unicorn hair' || persona.wand.core === 'unicorn tail-hair') {
       const personaElement = document.createElement('article');
       personaElement.classList.add('type-wand');
-      unicornCore.append(personaElement);
 
       // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
       const personaNombreElement = document.createElement('div');
@@ -256,7 +282,6 @@ function showWands(wandsData) {
     if (persona.wand.core === 'dragon heartstring') {
       const personaElement = document.createElement('article');
       personaElement.classList.add('type-wand');
-      dragonCore.append(personaElement);
 
       // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
       const personaNombreElement = document.createElement('div');
@@ -283,7 +308,6 @@ function showWands(wandsData) {
     if (persona.wand.core === 'phoenix feather') {
       const personaElement = document.createElement('article');
       personaElement.classList.add('type-wand');
-      phoenixCore.append(personaElement);
 
       // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
       const personaNombreElement = document.createElement('div');
@@ -314,7 +338,6 @@ function showWands(wandsData) {
       }
       const personaElement = document.createElement('article');
       personaElement.classList.add('type-wand');
-      unkownCore.append(personaElement);
 
       // Agregamos un div para el nombre del personaje, le otorgamos una clase y obtenemos la data
       const personaNombreElement = document.createElement('div');
@@ -344,34 +367,36 @@ function showWands(wandsData) {
       containerOther.append(personaElement);
     }
   });
+
+  hideSection();
 }
 
 function wandPage() {
   document.querySelector('#pagina_inicial').innerHTML = `
     <main>
       <section id="wand_information" class = "formato_cartas ">
-      <div class = "core-title">
+      <div class = "core-title" id = "unicorn-section">
         <h2 >Unicorn tail-hair core</h2>
         <div id = "unicorn_core" class = "core-wand">
           <div class = "img-wands"><img class="image-core" src="Media/Unicornio.png" alt=""></div>
           <div id= "container-unicorn"></div>
         </div>
       </div>
-      <div class = "core-title">
+      <div class = "core-title" id = "dragon-section">
         <h2 >Dragon heartstring core</h2>
         <div id = "dragon_core" class = "core-wand">
           <div class = "img-wands"><img class="image-core dragon-image" src="Media/dragon.png" alt=""></div>
           <div id= "container-dragon"></div>
         </div>
       </div>
-      <div class = "core-title">
+      <div class = "core-title" id = "phoenix-section">
         <h2>Phoenix feather core</h2>
         <div id = "phoenix_core" class = "core-wand">
           <div class = "img-wands"><img class="image-core" src="Media/phoenix.png" alt=""></div>
           <div id= "container-phoenix"></div>
         </div>
       </div>
-      <div class = "core-title">
+      <div class = "core-title" id = "unknown-section">
         <h2 ">Another core</h2>
         <div id = "unknown_core" class = "core-wand">
         <div class = "img-wands"><img class="image-core" src="Media/varita.png" alt=""></div>
@@ -384,20 +409,24 @@ function wandPage() {
     <p> Adarleika and Geraldine &copy; Copyright 2020 </p>
   </footer>
 `;
+
+  // Contenedor de futura infirmación de nombre, madera y largo.
   containerUnicorn = document.querySelector('#container-unicorn');
   containerDragon = document.querySelector('#container-dragon');
   containerPhoenix = document.querySelector('#container-phoenix');
   containerOther = document.querySelector('#container-another');
-  unicornCore = document.querySelector('#unicorn_core');
-  dragonCore = document.querySelector('#dragon_core');
-  phoenixCore = document.querySelector('#phoenix_core');
-  unkownCore = document.querySelector('#unknown_core');
+  // Sección que contiene título, contenedor de imagen y contenedor anterior.
+  unicornSection = document.querySelector('#unicorn-section');
+  dragonSection = document.querySelector('#dragon-section');
+  phoenixSection = document.querySelector('#phoenix-section');
+  unknownSection = document.querySelector('#unknown-section');
   showWands(data);
   nameSearch.value = '';
-  // Buscador
-  const nameSearchWand = document.getElementById('nameSearch');
+  // Buscador por nombre.
+  const nameSearchWand = document.querySelector('#nameSearch');
   nameSearchWand.addEventListener('keyup', (event) => {
-    const searchFilter = filterName(event);
+    const term = event.target.value;
+    const searchFilter = filterName(term);
     containerUnicorn.innerHTML = '';
     containerDragon.innerHTML = '';
     containerPhoenix.innerHTML = '';
@@ -407,13 +436,12 @@ function wandPage() {
 }
 pageWand.addEventListener('click', wandPage);
 
+// Recargar página inicial.
 function start() {
   window.location = 'index.html';
 }
-
 
 let startButton = document.querySelector('.home');
 startButton.addEventListener('click', start);
 startButton = document.querySelector('.go-home');
 startButton.addEventListener('click', start);
-

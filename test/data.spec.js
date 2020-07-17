@@ -1,10 +1,43 @@
 /* eslint-disable indent */
 import {
   agregarRol,
+  filterName,
   filterHouse,
   filterGender,
   filterRole,
 } from '../src/data.js';
+
+describe('filterName', () => {
+  it('is a function', () => {
+    expect(typeof filterName).toBe('function');
+  });
+
+  it('returns `filterName`', () => {
+    const data = [{
+      name: 'Bellatrix Lestrange',
+      species: 'human',
+      gender: 'female',
+      house: 'Slytherin',
+      dateOfBirth: '',
+      yearOfBirth: 1951,
+      ancestry: 'pure-blood',
+      eyeColour: 'brown',
+      hairColour: 'black',
+      wand: {
+        wood: 'walnut',
+        core: 'dragon heartstring',
+        length: 12.75,
+      },
+      patronus: '',
+      hogwartsStudent: false,
+      hogwartsStaff: false,
+      actor: 'Helena Bonham Carter',
+      alive: false,
+      image: 'http://hp-api.herokuapp.com/images/bellatrix.jpg',
+    }];
+    expect(filterName('bellatrix')).toStrictEqual(data);
+  });
+});
 
 describe('agregarRol', () => {
   it('is a function', () => {
@@ -20,7 +53,6 @@ describe('agregarRol', () => {
     expect(agregarRol(data)).toBe('Student');
   });
 });
-
 
 describe('filterHouse', () => {
   it('is a function', () => {
