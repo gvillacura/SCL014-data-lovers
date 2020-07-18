@@ -4,6 +4,10 @@
 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
+* [3. Definición del producto](#3-definición-del-producto)
+* [4. Historias de usuarios](#4-historias-de-usuarios)
+* [5. Diseño de la Interfaz de Usuario](#5-diseño-de-la-interfaz-de-usuario)
+* [6. Diseño final de la aplicación](#6-diseño-final-de-la-aplicación)
 
 ***
 
@@ -39,19 +43,19 @@ Estos son los datos propuestos para mostrar la información:
      Este set de datos muestra la lista de los personajes del mundo de [Harry Potter: Wizards Unite](https://www.wizardingworld.com/), junto con sus respectivas características mencionadas en la serie de novelas de Harry Potter escrita por la autora británica J.K.Rowling.
      - [Investigación con jugadores de Harry Potter: Wizards Unite](src/data/potter/README.md)
 
-### Definición del producto
+## 3. Definición del producto
 
 El proceso de diseño del producto se basó en las necesidades de los usuarios de conocer características
 e información relevante de los personajes de Harry Potter.
 Para esto, comenzamos realizando una encuesta para saber que datos eran considerados de mayor relavancia. Una
 vez determinado comenzamos a definir las historias de usuario.
 
-### Historias de usuario
+## 4. Historias de usuarios
 
 Mediante la encuesta realizada y los datos proporcionados inicialmente por Laboratoria definimos cada una de 
 las historias de usuario y los criterios de aceptación de cada uno. Ocupamos Trello para mantener una adecuada planificación de cada historia y sus tareas.
 
-### Diseño de la Interfaz de Usuario
+## 5. Diseño de la Interfaz de Usuario
 
 #### Prototipo de baja fidelidad
 
@@ -73,7 +77,10 @@ Una vez definido el sketch pasamos al prototipo de alta fidelidad diseñado en f
 
 Este fue el resultado luego de la primera historia de usuario desarrollada durante la primera semana, sin embargo, luego del feedback del primer spring el diseño cambió quedando finalmente de la siguiente forma: 
  
- ![figma-2](https://user-images.githubusercontent.com/66650610/87203095-e7ba8180-c2cf-11ea-8713-11ebc581044c.jpeg)
+![Harry Potter – Figma1](https://user-images.githubusercontent.com/49289372/87862705-1c0ded80-c921-11ea-9119-05f0cabb3683.png)
 
 
 
+## 6. Diseño final de la aplicación
+
+![diseño-final1](https://user-images.githubusercontent.com/49289372/87862776-c38b2000-c921-11ea-84ee-ffd62e2c4aa6.png)
