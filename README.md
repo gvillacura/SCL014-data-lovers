@@ -55,6 +55,10 @@ vez determinado comenzamos a definir las historias de usuario.
 Mediante la encuesta realizada y los datos proporcionados inicialmente por Laboratoria definimos cada una de 
 las historias de usuario y los criterios de aceptación de cada uno. Ocupamos Trello para mantener una adecuada planificación de cada historia y sus tareas.
 
+### Encuesta
+
+https://docs.google.com/forms/d/1vEE2C56sajxGXKbcm4ay4gPJcZStF1FbRFcj-jvUOn0/viewform?edit_requested=true
+
 ## 5. Diseño de la Interfaz de Usuario
 
 #### Prototipo de baja fidelidad
